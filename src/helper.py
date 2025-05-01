@@ -13,8 +13,18 @@ from langgraph.prebuilt import create_react_agent
 from langchain_core.tools import StructuredTool, ToolException
 import sqlite3
 
-from .prompt import prompt_template
+#from .prompt import prompt_template
 from config import *
+from config import *
+import sys
+from pathlib import Path
+
+project_root = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(project_root))
+
+# Now import config
+from config import *
+
 
 
 def load_data(data_path):

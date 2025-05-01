@@ -1,8 +1,5 @@
 import sqlite3
-
 from config import *
-
-
 def check_emergencies():
 	# Connect to database
 	db = sqlite3.connect(DB_PATH)
