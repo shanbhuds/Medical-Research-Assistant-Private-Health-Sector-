@@ -1,20 +1,41 @@
 import os
 
 # Application parameters
-USER_NAME = 'kiran'
+USER_NAME = 'Martini'
 HOST = '127.0.0.1'
 PORT = 8080
 
 # File paths
-ROOT_DIR = os.path.dirname(__file__)
-ASSETS_FOLDER = os.path.join(ROOT_DIR, 'assets')
-DB_ROOT = os.path.join(ASSETS_FOLDER, 'database')
-DB_NAME = 'medassist'
-DB_PATH = os.path.join(DB_ROOT, DB_NAME + '.db')
-INDEX_ROOT = os.path.join(ASSETS_FOLDER, 'index')
-INDEX_NAME = 'medassist'
-INDEX_PATH = os.path.join(INDEX_ROOT, INDEX_NAME + '.faiss')
-CHAT_HISTORY_FOLDER = os.path.join(ASSETS_FOLDER, 'chat_history')
+# config.py
+import os
+
+# Define the project root directory
+ROOT_DIR = r"C:\Users\VIS_LAP_001\Downloads\MedAssistant-master"
+
+# Define other paths
+ASSETS_FOLDER = os.path.join(ROOT_DIR, "assets")
+INDEX_PATH = os.path.join(ASSETS_FOLDER, "index", "medassist.faiss")  # This is the path causing the error
+DB_PATH = os.path.join(ASSETS_FOLDER, "db", "database.sqlite")
+DATA_PATH = os.path.join(ASSETS_FOLDER, "data")
+# Create necessary directories
+os.makedirs(os.path.dirname(INDEX_PATH), exist_ok=True)
+os.makedirs(os.path.dirname(DB_PATH), exist_ok=True)
+
+# Other configuration constants
+USER_NAME = "Default User"
+CHUNK_SIZE = 1000
+CHUNK_OVERLAP = 200
+
+
+# ROOT_DIR = os.path.dirname(__file__)
+# ASSETS_FOLDER = os.path.join(ROOT_DIR, 'assets')
+# DB_ROOT = os.path.join(ASSETS_FOLDER, 'database')
+# DB_NAME = 'medassist'
+# DB_PATH = os.path.join(DB_ROOT, DB_NAME + '.db')
+# INDEX_ROOT = os.path.join(ASSETS_FOLDER, 'index')
+# INDEX_NAME = 'medassist'
+# INDEX_PATH = os.path.join(INDEX_ROOT, INDEX_NAME + '.faiss')
+# CHAT_HISTORY_FOLDER = os.path.join(ASSETS_FOLDER, 'chat_history')
 
 # Parameters for creating vector index
 CHUNK_SIZE = 500
